@@ -3,31 +3,22 @@ import Card from './Card';
 import ArticleList from './Article';
 import './CSS/Card.css';
 
-const CardListRow2 = () => {
-  return (
-    <div className='row'>
-      <Card
-        image={ArticleList[3].image}
-        name={ArticleList[3].name}
-        description={ArticleList[3].description}
-        star={ArticleList[3].star}
-        name1={ArticleList[3].name1}
-      />
-      <Card
-        image={ArticleList[4].image}
-        name={ArticleList[4].name}
-        description={ArticleList[4].description}
-        star={ArticleList[4].star}
-        name1={ArticleList[4].name1}
-      />
-      <Card
-        image={ArticleList[5].image}
-        name={ArticleList[5].name}
-        description={ArticleList[5].description}
-        star={ArticleList[5].star}
-        name1={ArticleList[5].name1}
-      />
-    </div>
-  );
-};
+function cardcomponent (Article , i){
+  return <Card
+  image = {Article.image}
+  name = {Article.name}
+  description = {Article.description}
+  star = {Article.star}
+  name1 = {Article.name1}
+  />
+}
+
+  const CardListRow2 = () => {
+    return (
+      <div className='row'>
+        {ArticleList.map(cardcomponent)}
+  
+      </div>
+    );
+  };
 export default CardListRow2;
